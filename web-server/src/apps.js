@@ -43,7 +43,8 @@ app.get('/index', (req, res) => {
             res.send({
                 movieInfo: {
                     title: movieRes.name,  // Correct property name
-                    id: movieRes.movieid    // Correct property name
+                    id: movieRes.movieid,    // Correct property name
+                    id: movieRes.poster_path
                 },
                 similarMovies: simRes.results  // Include other relevant data if needed
             });

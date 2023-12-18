@@ -12,7 +12,7 @@ movieForm.addEventListener('submit', (e) => {
     const movieName = search.value;
 
     messageOne.textContent = 'Loading...';
-    messageTwo.textContent = '';
+    messageTwo.innerHTML = '';
 
 
     fetch(`http://localhost:5000/index?movieid=${encodeURIComponent(movieName)}`)
@@ -23,8 +23,8 @@ movieForm.addEventListener('submit', (e) => {
                 messageOne.textContent = data.error;
             } else {
                 messageOne.textContent = `Movie Title: ${data.movieInfo.title}`;
-                messageTwo.textContent = `Movie ID: ${data.movieInfo.id}`;
-
+                messageTwo.innerHTML = `<img src="https://image.tmdb.org/t/p/original${data.movieInfo.poster_path}"  width="200">`;
+                
                 // Display similar movies
                 const similarMoviesList = document.createElement('ul');
 
@@ -32,7 +32,7 @@ movieForm.addEventListener('submit', (e) => {
                     data.similarMovies.forEach((movie) => {
                         const listItem = document.createElement('li');
                         listItem.innerHTML = `<strong>${movie.title}</strong> (${movie.release_date})<br>
-                            <img src="${movie.poster_path}"  width="100">
+                            <img src="https://image.tmdb.org/t/p/w185${movie.poster_path}"  width="200">
                             <p>${movie.overview}</p>`;
                         similarMoviesList.appendChild(listItem);
                     });

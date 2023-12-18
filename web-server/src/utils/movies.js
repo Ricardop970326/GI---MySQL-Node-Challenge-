@@ -72,6 +72,7 @@ const getMovieDetails = (movieName, callback) => {
                     yearOfRelease: json.results[0].release_date,
                     overview: json.results[0].overview,
                     poster: json.results[0].poster_path,
+                    poster: json.results[0].backdrop_path,
                     movieid: json.results[0].id
                 };
                 callback(undefined, movieDetails);
