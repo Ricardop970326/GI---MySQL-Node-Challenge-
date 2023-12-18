@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>index</title>
+    <link rel="icon" href="/img/weather.png">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <div class="main-content">
+        {{>header}}
+
+        <p>Your favorite movies!</p>
+
+        <form>
+            <input placeholder="Location">
+            <button>Search</button>
+        </form>
+
+        <p id="message-1"></p>
+        <p id="message-2"></p>
+
+
+        <div>
+         </div>
+        <div id="similar-movies"></div>
+         {{!-- {{#each similarMovies}}
+    <div class="movie-item">
+      <h3>{{title}}</h3>
+      <p>Release Date: {{release_date}}</p>
+      <img src="{{movie.poster_path}}" width="100">
+      <p>{{overview}}</p>
+    </div>
+  {{/each}} --}}
+    </div>
+
+    {{>footer}}
+
+    <script src="/js/app.js"></script>
+</body>
+
+</html>
