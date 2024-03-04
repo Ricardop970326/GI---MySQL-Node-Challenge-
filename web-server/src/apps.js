@@ -20,7 +20,7 @@ app.get('', (req, res) => {
         title: 'index',
         name: 'Ricardo'
     });
-});
+});////
 
 app.get('/index', (req, res) => {
     if (!req.query.movieid) {
